@@ -1,0 +1,10 @@
+version: "3"
+services:
+  nodecg:
+    build: .
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./:/nodecg/bundles/ome-speedrun-layouts
+      - ./cfg:/nodecg/cfg
+      - ./db:/nodecg/db
