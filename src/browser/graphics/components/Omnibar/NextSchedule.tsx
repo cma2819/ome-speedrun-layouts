@@ -31,12 +31,18 @@ export const NextSchedule = ({ nextRun }: Props) => {
     <Container>
       <ContentLabel iconClass="fas fa-angle-double-right" text="Next" />
       <div>
-        {nextRun.game} - {nextRun.category}
+        {nextRun.game}{nextRun.category ? `- ${nextRun.category}` : ''}
       </div>
-      <Border />
-      <div>
-        <PlayerIcon /> {currentRunner}
-      </div>
+      {
+        currentRunner && (
+          <React.Fragment>
+            <Border />
+            <div>
+              <PlayerIcon /> {currentRunner}
+            </div>
+          </React.Fragment>
+        )
+      }
     </Container>
   )
 }
