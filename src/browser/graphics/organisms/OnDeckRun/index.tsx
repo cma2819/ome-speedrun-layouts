@@ -59,11 +59,19 @@ export const OnDeckRun = ({ game, category, runners, commentators, console, esti
           <GameText small={small}>
             {game}
           </GameText>
-          <MiscText>{category} / {console} / {estimate}</MiscText>
+          {
+            ((category !== '') && (console !== '') && (estimate !== '')) && (
+              <MiscText>{category} / {console} / {estimate}</MiscText>
+            )
+          }
         </Games>
         <Names>
           <MiscText>
-            <SimpleNameplate name={runners.join(',')} role="runner" />
+            {
+              runners.length > 0 && (
+                <SimpleNameplate name={runners.join(',')} role="runner" />
+              )
+            }
           </MiscText>
           <MiscText>
             {
