@@ -31,7 +31,7 @@ export const NextSchedule = ({ nextRun }: Props) => {
     <Container>
       <ContentLabel iconClass="fas fa-angle-double-right" text="Next" />
       <div>
-        {nextRun.game}{nextRun.category ? `- ${nextRun.category}` : ''}
+        {nextRun.game}{nextRun.category ? ` - ${nextRun.category}` : ''}
       </div>
       {
         currentRunner && (
