@@ -24,13 +24,6 @@ type Props = {
   race?: boolean
 };
 
-type Social = {
-  twitch?: string;
-  nico?: string;
-  twitter?: string;
-  youtube?: string;
-}
-
 export const RunParticipants = ({ race = false }: Props) => {
 
   const speedcontrol = useContext(SpeedcontrolContext);
@@ -44,15 +37,6 @@ export const RunParticipants = ({ race = false }: Props) => {
 
   const playersFromRun = (run: RunData) => {
     return run.teams.flatMap(team => team.players);
-  }
-
-  const makeSocialsString = (socials: Array<Social>) => {
-    return {
-      twitch: socials.map(social => social.twitch || '-').join('/'),
-      nico: socials.map(social => social.nico || '-').join('/'),
-      twitter: socials.map(social => social.twitter || '-').join('/'),
-      youtube: socials.map(social => social.youtube || '-').join('/'),
-    }
   }
 
   const socialsForPlayer = (player: SpeedcontrolPlayer) => {
@@ -79,14 +63,16 @@ export const RunParticipants = ({ race = false }: Props) => {
         ))
       }
       {
-        currentCommentators.length > 0 && (
-          <Plate>
-            <Nameplate
-              name={currentCommentators.map(commentator => commentator.name).join('/')}
-              socials={makeSocialsString(currentCommentators.map(commentator => commentator.social))}
-              role="commentator"
-            />
-          </Plate>
+        currentCommentators.length > 0 && currentCommentators.map(commentator => 
+          (
+            <Plate>
+              <Nameplate
+                name={commentator.name}
+                socials={commentator.social}
+                role="commentator"
+              />
+            </Plate>
+          )
         )
       }
     </Container>
