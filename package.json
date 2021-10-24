@@ -8,7 +8,9 @@
     "email": "chicchaima@gmail.com"
   },
   "files": [
-    "graphics"
+    "dashboard",
+    "graphics",
+    "extension"
   ],
   "keywords": [
     "node.js",

@@ -20,7 +20,7 @@ const RunDeck = styled.div`
   top: 180px;
   left: 80px;
   height: 620px;
-  width: 1028px;
+  width: 1440px;
   filter: drop-shadow(0 0 8px #222222);
 `;
 
