@@ -1,18 +1,13 @@
 import { clone } from 'lodash';
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
-import { Message, Timekeeping } from '../nodecg/generated';
+import { Message } from '../nodecg/generated';
 import { BundleNodecgInstance } from '../nodecg/nodecg';
 
 interface Replicants {
-  timekeeping: Timekeeping;
   message: Message;
 }
 
 const defaultValues: Replicants = {
-  timekeeping: {
-    time: '00:00',
-    status: 'finished',
-  },
   message: '',
 };
 
@@ -24,13 +19,9 @@ type Props = {
 
 export const ReplicantProvider = ({ children }: Props) => {
 
-  const [timekeeping, setTimekeeping] = useState<Timekeeping>(defaultValues.timekeeping);
   const [message, setMessage] = useState<Message>(defaultValues.message);
 
   useEffect(() => {
-    (nodecg as BundleNodecgInstance).Replicant('timekeeping').on('change', (newVal) => {
-      setTimekeeping(clone(newVal));
-    });
     (nodecg as BundleNodecgInstance).Replicant('message').on('change', (newVal) => {
       setMessage(clone(newVal));
     });
@@ -38,7 +29,6 @@ export const ReplicantProvider = ({ children }: Props) => {
 
   return (
     <ReplicantContext.Provider value={{
-      timekeeping,
       message,
     }}>
       { children }
