@@ -9,6 +9,7 @@ type ContainerProps = {
 
 const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   transition: all 1s;
   opacity: ${({leaving, entering}: ContainerProps) =>

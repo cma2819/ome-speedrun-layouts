@@ -18,7 +18,7 @@ type Props = {
 const Container = styled.div`
   display: grid;
   grid-template-rows: 64px 2px 48px;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 32px 1fr;
 `;
 
 const Icon = styled.i`
@@ -27,7 +27,6 @@ const Icon = styled.i`
 
 const IconCell = styled.div`
   grid-row-start: 1;
-  grid-row-end: 4;
   align-self: center;
   justify-self: center;
 `;
@@ -38,9 +37,12 @@ const NameRow = styled.div`
   justify-self: center;
 `;
 const SocialRow = styled.div`
-  padding: 0px 16px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 0px 8px;
   display: grid;
   justify-content: space-between;
+  align-items: center;
   grid-template-columns: auto auto;
 `;
 
@@ -50,6 +52,8 @@ const NameText = styled.div`
 
 const Border = styled.div`
   background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 3;
 `;
 
 const SocialArea = styled.div`

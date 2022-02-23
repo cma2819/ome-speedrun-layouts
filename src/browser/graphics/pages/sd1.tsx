@@ -6,6 +6,7 @@ import { Logo } from '../components/Logo';
 import { RunParticipants } from '../components/RunParticipants';
 import { Timer } from '../components/Timer';
 import { RunDataLabel } from '../components/RunDataLabel';
+import { SimpleCard } from '../organisms/SimpleCard';
 
 const LogoArea = styled.div`
   position: absolute;
@@ -28,7 +29,7 @@ const VideoArea = styled.div`
 const Participants = styled.div`
   position: absolute;
   top: 196px;
-  left: 32px;
+  left: 16px;
   width: 539px;
   height: 320px;
 `;
@@ -36,7 +37,7 @@ const Participants = styled.div`
 const InfoArea = styled.div`
   position: absolute;
   top: 536px;
-  left: 32px;
+  left: 16px;
   width: 539px;
   height: 460px;
   padding: 0px 8px;
@@ -47,8 +48,8 @@ const InfoArea = styled.div`
 
 const Margin = styled.div``;
 
-const InfoRow = styled.div`
-  width: 100%;
+const InfoRow = styled(SimpleCard)`
+  padding: 8px 16px;
 `;
 
 const App = () => {

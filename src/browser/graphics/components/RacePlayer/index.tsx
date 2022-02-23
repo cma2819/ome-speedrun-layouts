@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { SpeedcontrolPlayer } from '../../../../nodecg/external/speedcontrol-additions';
 import { Nameplate } from '../../organisms/Nameplate';
+import { SimpleCard } from '../../organisms/SimpleCard';
 import { ScAdditionContext } from '../../providers/ScAdditionProvider';
 import { SpeedcontrolContext } from '../../providers/SpeedcontrolProvider';
 
@@ -9,9 +10,8 @@ type Props = {
   index: number;
 }
 
-const Container = styled.div`
+const Container = styled(SimpleCard)`
   padding: 4px 16px;
-  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 export const RacePlayer = ({index}: Props) => {

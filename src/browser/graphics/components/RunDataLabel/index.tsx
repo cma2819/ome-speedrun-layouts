@@ -8,7 +8,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   grid-template-rows: auto 4px auto;
-  grid-gap: 16px;
+  grid-gap: 12px;
 `;
 
 const GameText = styled.div`
@@ -16,7 +16,7 @@ const GameText = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 38px;
+  font-size: 32px;
   font-weight: bold;
   width: 100%;
 `;

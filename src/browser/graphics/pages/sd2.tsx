@@ -4,95 +4,72 @@ import styled from 'styled-components';
 import { GraphicsApp } from '../GraphicsApp';
 import { Logo } from '../components/Logo';
 import { RunParticipants } from '../components/RunParticipants';
-import { Timer } from '../components/Timer';
 import { RunDataLabel } from '../components/RunDataLabel';
-import { RacePlayer } from '../components/RacePlayer';
+import { Timer } from '../components/Timer';
 import { SimpleCard } from '../organisms/SimpleCard';
+import { RacePlayer } from '../components/RacePlayer';
 
 const LogoArea = styled.div`
   position: absolute;
-  top: 16px;
+  top: 728px;
   left: 800px;
-  height: 160px;
+  height: 120px;
   width: 320px;
   filter: drop-shadow(0 0 8px #222222);
 `;
 
 const VideoArea = styled.div`
   position: absolute;
-  top: 16px;
+  top: 32px;
   left: 16px;
-  width: 640px;
-  height: 482px;
+  width: 928px;
+  height: 696px;
   background-color: rgba(255, 255, 255, 0.6);
 `;
 
 const FirstPlayer = styled.div`
   position: absolute;
-  top: 220px;
-  left: 656px;
-  width: 460px;
+  top: 728px;
+  left: 16px;
+  width: 492px;
   height: 120px;
 `;
 
 const SecondVideoArea = styled.div`
   position: absolute;
-  top: 16px;
+  top: 32px;
   right: 16px;
-  width: 640px;
-  height: 482px;
+  width: 928px;
+  height: 696px;
   background-color: rgba(255, 255, 255, 0.6);
 `;
 
 const SecondPlayer = styled.div`
   position: absolute;
-  top: 376px;
-  right: 656px;
-  width: 460px;
+  top: 728px;
+  right: 16px;
+  width: 492px;
   height: 120px;
-`;
-
-const ThirdVideoArea = styled.div`
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  width: 640px;
-  height: 482px;
-  background-color: rgba(255, 255, 255, 0.6);
-`;
-
-const ThirdPlayer = styled.div`
-  position: absolute;
-  top: 530px;
-  left: 656px;
-  width: 460px;
-  height: 120px;
-`
-
-const Participants = styled.div`
-  position: absolute;
-  top: 536px;
-  left: 1264px;
-  width: 640px;
-  height: 320px;
 `;
 
 const InfoArea = styled.div`
   position: absolute;
   top: 856px;
-  left: 656px;
-  width: 1248px;
-  height: 160px;
-  padding: 0px 8px;
+  left: 16px;
+  width: 1888px;
+  height: 150px;
+  padding: 8px 0;
 
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   column-gap: 8px;
 `;
 
 const InfoRow = styled(SimpleCard)`
   padding: 4px 8px;
 `;
+
+const Participants = styled.div``;
 
 const App = () => {
   return (
@@ -109,17 +86,13 @@ const App = () => {
         <SecondPlayer>
           <RacePlayer index={1} />
         </SecondPlayer>
-        <ThirdVideoArea />
-        <ThirdPlayer>
-          <RacePlayer index={2} />
-        </ThirdPlayer>
-        <Participants>
-          <RunParticipants race />
-        </Participants>
         <InfoArea>
           <InfoRow>
             <RunDataLabel />
           </InfoRow>
+          <Participants>
+            <RunParticipants race />
+          </Participants>
           <InfoRow>
             <Timer />
           </InfoRow>

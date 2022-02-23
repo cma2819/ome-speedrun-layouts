@@ -6,6 +6,7 @@ import { Logo } from '../components/Logo';
 import { RunParticipants } from '../components/RunParticipants';
 import { RunDataLabel } from '../components/RunDataLabel';
 import { Timer } from '../components/Timer';
+import { SimpleCard } from '../organisms/SimpleCard';
 
 const LogoArea = styled.div`
   position: absolute;
@@ -39,13 +40,16 @@ const InfoArea = styled.div`
   left: 424px;
   width: 1464px;
   height: 158px;
-  padding: 8px 8px;
+  padding: 8px 0;
 
   display: grid;
   grid-template-columns: auto auto;
+  column-gap: 8px;
 `;
 
-const InfoRow = styled.div``;
+const InfoRow = styled(SimpleCard)`
+  padding: 4px 8px;
+`;
 
 const App = () => {
   return (

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { SpeedcontrolPlayer } from '../../../../nodecg/external/speedcontrol-additions/speedcontrolPlayer';
 import { RunData } from '../../../../nodecg/external/speedcontrol/RunData';
 import { Nameplate } from '../../organisms/Nameplate';
+import { SimpleCard } from '../../organisms/SimpleCard';
 import { CommentatorContext } from '../../providers/CommentatorProvider';
 import { ScAdditionContext } from '../../providers/ScAdditionProvider';
 import { SpeedcontrolContext } from '../../providers/SpeedcontrolProvider';
@@ -15,9 +16,8 @@ const Container = styled.div`
   align-content: center;
 `;
 
-const Plate = styled.div`
+const Plate = styled(SimpleCard)`
   padding: 4px 16px;
-  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 type Props = {
@@ -53,7 +53,7 @@ export const RunParticipants = ({ race = false }: Props) => {
     <Container>
       {
         !race && currentRun && playersFromRun(currentRun).map(player => (
-          <Plate key={player.id}>
+          <Plate>
             <Nameplate
               name={player.name}
               socials={socialsForPlayer(player)}
