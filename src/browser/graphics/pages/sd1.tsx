@@ -29,7 +29,7 @@ const VideoArea = styled.div`
 const Participants = styled.div`
   position: absolute;
   top: 196px;
-  left: 16px;
+  left: 32px;
   width: 539px;
   height: 320px;
 `;
@@ -37,7 +37,7 @@ const Participants = styled.div`
 const InfoArea = styled.div`
   position: absolute;
   top: 536px;
-  left: 16px;
+  left: 32px;
   width: 539px;
   height: 460px;
   padding: 0px 8px;
