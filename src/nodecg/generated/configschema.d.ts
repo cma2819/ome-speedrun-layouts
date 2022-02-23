@@ -6,9 +6,5 @@
  */
 
 export interface Configschema {
-	googleApiKey: string;
-	twitch: {
-		key?: string;
-		secret?: string;
-	};
+	message: string;
 }

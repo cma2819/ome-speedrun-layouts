@@ -9,6 +9,7 @@ import { TweetContext } from '../../providers/TweetProvider';
 import { TwitterNotification } from './TwitterNotification';
 import { ReplicantContext } from '../../../ReplicantProvider';
 import { ModMessage } from './ModMessage';
+import { BundleNodecgInstance } from '../../../../nodecg/nodecg';
 
 const Container = styled.div`
   width: 100%;
@@ -40,6 +41,8 @@ export const BarContent = () => {
 
   const [scene, setScene] = useState<typeof scenes[number]>('hashtag');
   const sceneRef = useRef(scene);
+
+  const staticMessage = (nodecg as BundleNodecgInstance).bundleConfig.message;
 
   useEffect(() => {
     sceneRef.current = scene;
@@ -106,7 +109,7 @@ export const BarContent = () => {
                       <React.Fragment>
                         {
                           (scene === 'hashtag') && (
-                            <MessageArea>#OMESpeedrun</MessageArea>
+                            <MessageArea>{staticMessage}</MessageArea>
                           )
                         }
                         {
