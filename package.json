@@ -96,6 +96,12 @@
         "width": "1920",
         "height": "1028",
         "singleInstance": false
+      },
+      {
+        "file": "gba.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
       }
     ],
     "assetCategories": [
