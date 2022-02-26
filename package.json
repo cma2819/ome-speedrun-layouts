@@ -86,6 +86,12 @@
         "singleInstance": false
       },
       {
+        "file": "hd3.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
         "file": "sd3.html",
         "width": "1920",
         "height": "1028",
