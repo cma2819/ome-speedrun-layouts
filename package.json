@@ -68,6 +68,12 @@
         "singleInstance": false
       },
       {
+        "file": "sd1-with-cam.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
         "file": "sd2.html",
         "width": "1920",
         "height": "1028",
@@ -75,6 +81,12 @@
       },
       {
         "file": "hd1.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
+        "file": "hd1-4coop.html",
         "width": "1920",
         "height": "1028",
         "singleInstance": false
