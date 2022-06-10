@@ -40,7 +40,7 @@ const InfoArea = styled.div`
   left: 32px;
   width: 539px;
   height: 460px;
-  padding: 0px 8px;
+  padding: 0px;
 
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
