@@ -5,6 +5,7 @@ import { GraphicsApp } from '../GraphicsApp';
 import { SetupSchedules } from '../components/SetupSchedules';
 import { SpotifyTrack } from '../components/SpotifyTrack';
 import { Logo } from '../components/Logo';
+import { SimpleCard } from '../organisms/SimpleCard';
 
 const LogoArea = styled.div`
   position: absolute;
@@ -15,7 +16,7 @@ const LogoArea = styled.div`
   filter: drop-shadow(0 0 8px #222222);
 `;
 
-const RunDeck = styled.div`
+const RunDeck = styled(SimpleCard)`
   position: absolute;
   top: 180px;
   left: 80px;
@@ -24,11 +25,12 @@ const RunDeck = styled.div`
   filter: drop-shadow(0 0 8px #222222);
 `;
 
-const SpotifyTrackArea = styled.div`
+const SpotifyTrackArea = styled(SimpleCard)`
   position: absolute;
   top: 970px;
   left: 80px;
   filter: drop-shadow(0 0 8px #222222);
+  padding: 8px 16px;
 `;
 
 const App = () => {
