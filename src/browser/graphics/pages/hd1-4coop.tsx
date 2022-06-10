@@ -2,20 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { GraphicsApp } from '../GraphicsApp';
-import { Logo } from '../components/Logo';
 import { RunParticipants } from '../components/RunParticipants';
 import { Timer } from '../components/Timer';
 import { RunDataLabel } from '../components/RunDataLabel';
 import { SimpleCard } from '../organisms/SimpleCard';
-
-const LogoArea = styled.div`
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  height: 160px;
-  width: 320px;
-  filter: drop-shadow(0 0 8px #222222);
-`;
 
 const VideoArea = styled.div`
   position: absolute;
@@ -71,9 +61,6 @@ const App = () => {
   return (
     <React.Fragment>
       <GraphicsApp>
-        <LogoArea>
-          <Logo />
-        </LogoArea>
         <VideoArea />
         <CoopVideo index={0} />
         <CoopVideo index={1} />
