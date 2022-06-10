@@ -75,11 +75,6 @@ const App = () => {
           <Logo />
         </LogoArea>
         <VideoArea />
-        {
-          [0, 1, 2].map(index => {(
-            <CoopVideo key={index} index={index} />
-          )})
-        }
         <CoopVideo index={0} />
         <CoopVideo index={1} />
         <CoopVideo index={2} />
