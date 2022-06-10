@@ -26,8 +26,6 @@ const VideoArea = styled.div`
   background-color: rgba(255, 255, 255, 0.6);
 `;
 
-type CoopIndex = 0 | 1 | 2;
-
 type CoopProps = {
   index: number;
 };
@@ -69,8 +67,6 @@ const InfoRow = styled(SimpleCard)`
 
 
 const App = () => {
-  
-  const indexes: CoopIndex[] = [0, 1, 2];
 
   return (
     <React.Fragment>
