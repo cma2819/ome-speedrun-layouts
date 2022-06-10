@@ -49,10 +49,10 @@ const Participants = styled.div`
 
 const InfoArea = styled.div`
   position: absolute;
-  top: 536px;
+  top: 616px;
   left: 32px;
   width: 539px;
-  height: 460px;
+  height: 380px;
   padding: 0px;
 
   display: grid;
