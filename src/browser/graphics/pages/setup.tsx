@@ -16,18 +16,18 @@ const LogoArea = styled.div`
   filter: drop-shadow(0 0 8px #222222);
 `;
 
-const RunDeck = styled(SimpleCard)`
+const RunDeck = styled('div')`
   position: absolute;
   top: 180px;
   left: 80px;
   height: 620px;
   width: 1440px;
-  filter: drop-shadow(0 0 8px #222222);
+  filter: drop-shadow(0 0 16px #222222);
 `;
 
 const SpotifyTrackArea = styled(SimpleCard)`
   position: absolute;
-  top: 970px;
+  top: 920px;
   left: 80px;
   filter: drop-shadow(0 0 8px #222222);
   padding: 8px 16px;

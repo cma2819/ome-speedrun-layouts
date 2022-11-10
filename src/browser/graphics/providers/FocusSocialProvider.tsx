@@ -8,7 +8,7 @@ const allSocialNames: Array<FocusSocial> = ['twitch', 'nico', 'twitter', 'youtub
 
 const defaultValue = 'twitch';
 
-const CHANGE_INTERVAL_SEC = 30;
+const CHANGE_INTERVAL_SEC = 5;
 
 export const FocusSocialContext = createContext<FocusSocial>(defaultValue);
 type Props = {
@@ -35,7 +35,7 @@ export const FocusSocialProvider = ({ children }: Props) => {
 
     const runnerSocials = currentRun.teams.flatMap(team => team.players).map((player) => {
       const additions = scAddition.speedcontrolUserAdditionArray.find(
-        addition => addition.id === player.customData.oengusId
+        addition => addition.id === player.id
       );
 
       return {
@@ -67,27 +67,27 @@ export const FocusSocialProvider = ({ children }: Props) => {
     speedcontrol.runDataArray,
     scAddition.speedcontrolUserAdditionArray,
     extIdToCommentators,
-    scAddition.speedcontrolCurrentRunIndex
+    scAddition.speedcontrolCurrentRunIndex,
   ]);
 
   useEffect(() => {
+    console.log('test');
 
     const intervalId = window.setInterval(() => {
       const length = existSocial.length;
       if (length > 0) {
-        const next = (existSocial.indexOf(focus) + 1) % length;
-  
-        setFocus(existSocial[next]);
+        setFocus((prev) => {
+          const next = (existSocial.indexOf(prev) + 1) % length;
+          return existSocial[next];
+        });
       }
       
     }, CHANGE_INTERVAL_SEC * 1000);
 
-    return () => clearInterval(intervalId);
-  }, [
-    existSocial,
-    focus,
-    // no "focus" 
-  ]);
+    return () => {
+      clearInterval(intervalId)
+    };
+  }, [existSocial]);
 
   return (
     <FocusSocialContext.Provider value={focus}>

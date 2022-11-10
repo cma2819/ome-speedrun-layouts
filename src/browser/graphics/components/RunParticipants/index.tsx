@@ -40,7 +40,7 @@ export const RunParticipants = ({ race = false }: Props) => {
   }
 
   const socialsForPlayer = (player: SpeedcontrolPlayer) => {
-    const social = scAdditions.speedcontrolUserAdditionArray.find(addition => addition.id === player.customData.oengusId);
+    const social = scAdditions.speedcontrolUserAdditionArray.find(addition => addition.id === player.id);
     return {
       twitch: player.social.twitch,
       twitter: social?.social.twitter,
@@ -52,7 +52,7 @@ export const RunParticipants = ({ race = false }: Props) => {
   return (
     <Container>
       {
-        !race && currentRun && playersFromRun(currentRun).map(player => (
+        !race && currentRun && playersFromRun(currentRun).map((player, idx) => (
           <Plate>
             <Nameplate
               name={player.name}

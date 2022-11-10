@@ -34,7 +34,7 @@ export const CommentatorProvider = ({ children }: Props) => {
         })
       )
     );
-  }, [ speedcontrol, scAdditions ]);
+  }, [ speedcontrol.runDataArray, scAdditions.commentatorArray ]);
 
   return <CommentatorContext.Provider value={activeCommentators}>
     { children }

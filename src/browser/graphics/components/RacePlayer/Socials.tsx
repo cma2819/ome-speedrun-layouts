@@ -14,7 +14,7 @@ export const Socials = ({index}: Props) => {
 
   const currentRun = speedcontrol.runDataArray.find((_, index) => index === scAdditions.speedcontrolCurrentRunIndex);
   const player = currentRun?.teams.flatMap(team => team.players).find((_, _index) => _index === index);
-  const addition = scAdditions.speedcontrolUserAdditionArray.find(addition => addition.id === player?.customData.oengusId);
+  const addition = scAdditions.speedcontrolUserAdditionArray.find(addition => addition.id === player?.id);
 
   const socials = Object.assign(
     {},
