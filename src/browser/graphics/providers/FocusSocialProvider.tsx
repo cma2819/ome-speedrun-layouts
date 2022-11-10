@@ -8,7 +8,7 @@ const allSocialNames: Array<FocusSocial> = ['twitch', 'nico', 'twitter', 'youtub
 
 const defaultValue = 'twitch';
 
-const CHANGE_INTERVAL_SEC = 5;
+const CHANGE_INTERVAL_SEC = 30;
 
 export const FocusSocialContext = createContext<FocusSocial>(defaultValue);
 type Props = {
