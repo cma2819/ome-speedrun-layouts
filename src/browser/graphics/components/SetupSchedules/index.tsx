@@ -63,6 +63,7 @@ export const SetupSchedules = () => {
                   ? commentators[nextRun.externalID].map(commentator => commentator.name)
                   : []
               }
+              isNext={true}
             ></OnDeckRun>
           )
         }

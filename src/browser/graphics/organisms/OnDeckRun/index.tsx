@@ -11,6 +11,7 @@ type Props = {
   estimate: string;
   startAt?: string;
   small?: boolean;
+  isNext?: boolean;
 };
 
 type SmallableProps = {
@@ -45,12 +46,12 @@ const GameText = styled.div`
 
 const MiscText = styled.div``;
 
-export const OnDeckRun = ({ game, category, runners, commentators, console, estimate, startAt, small }: Props) => {
+export const OnDeckRun = ({ game, category, runners, commentators, console, estimate, startAt, small, isNext }: Props) => {
 
   return (
     <Container>
       <StartTime>
-        { startAt ? `${startAt} ～` : 'NEXT' }
+        { isNext ? 'NEXT' : (startAt ? `${startAt} ～` : '-')}
       </StartTime>
       <Border />
       <Padding />
