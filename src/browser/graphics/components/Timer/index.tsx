@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ScAdditionContext } from '../../providers/ScAdditionProvider';
 import { SpeedcontrolContext } from '../../providers/SpeedcontrolProvider';
@@ -27,6 +27,7 @@ const rainbow = keyframes`
 type TimerProps = {
   useRainbow: boolean;
   state: 'stopped'|'running'|'paused'|'finished';
+  isDanger: boolean;
 }
 
 const rainbowMixin = css`
@@ -40,6 +41,7 @@ const MainTime = styled.div`
   filter: drop-shadow(0 0 8px #222222);
   ${({state}: TimerProps) => (state === 'stopped' || state === 'paused') ? 'color: #888888;' : ''}
   ${({useRainbow, state}: TimerProps) => (state === 'finished' && !useRainbow) ? 'color: #fcf951;' : ''}
+  ${({isDanger, state}: TimerProps) => (state !== 'finished' && isDanger) ? 'color: #ff5353;' : ''}
   ${({useRainbow, state}: TimerProps) => (state === 'finished' && useRainbow) ? rainbowMixin : ''}
 `;
 
@@ -49,17 +51,30 @@ const EstimateTime = styled.div``;
 
 export const Timer = () => {
 
+  const useOneHour = true;
+
+  const [overOneHour, setOverOneHour] = useState<boolean>(false);
+
   const speedcontrol = useContext(SpeedcontrolContext);
   const scAdditions = useContext(ScAdditionContext);
 
   const currentRun = speedcontrol.runDataArray.find((_, index) => index === scAdditions.speedcontrolCurrentRunIndex);
+
+  useEffect(() => {
+    setOverOneHour(
+      useOneHour && ((speedcontrol.timer?.milliseconds || 0) > 3_600_000)
+    )
+  }, [
+    speedcontrol.timer?.milliseconds,
+    useOneHour,
+  ])
 
   return (
     <Container>
       {
         currentRun && (
           <React.Fragment>
-            <MainTime useRainbow={false} state={speedcontrol.timer?.state || 'running'}>
+            <MainTime isDanger={overOneHour} useRainbow={false} state={speedcontrol.timer?.state || 'running'}>
               {speedcontrol.timer?.time || ''}
             </MainTime>
             <Border />
