@@ -5,6 +5,28 @@
         "message": {
             "type": "string",
             "default": "Static message from event."
+        },
+        "twitch": {
+            "type": "object",
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "default": "<Twitch Client ID>"
+                },
+                "clientSecret": {
+                    "type": "string",
+                    "default": "<Twitch Client Secret>"
+                },
+                "redirectUrl": {
+                    "type": "string",
+                    "default": "http://localhost:9090/ome-speedrun-layouts/auth/twitch/callback"
+                },
+                "loginName": {
+                    "type": "string",
+                    "default": "ome-speedrun"
+                }
+            },
+            "additionalProperties": false
         }
     },
     "additionalProperties": false,

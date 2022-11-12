@@ -46,6 +46,12 @@
         "title": "Message",
         "width": 6,
         "file": "message-control.html"
+      },
+      {
+        "name": "mark-stream",
+        "title": "Twitch Stream mark",
+        "width": 6,
+        "file": "mark-stream.html"
       }
     ],
     "graphics": [
@@ -142,7 +148,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@mui/icons-material": "^5.0.3",
     "@mui/material": "^5.0.3",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "clone": "^2.1.2",
     "globby": "^11.0.3",
     "livesplit-core": "^0.10.2",
@@ -153,6 +159,7 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/clone": "^2.1.0",
     "@types/globby": "^9.1.0",
     "@types/html-webpack-plugin": "^3.2.5",
