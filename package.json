@@ -46,6 +46,12 @@
         "title": "Message",
         "width": 6,
         "file": "message-control.html"
+      },
+      {
+        "name": "mark-stream",
+        "title": "Twitch Stream mark",
+        "width": 6,
+        "file": "mark-stream.html"
       }
     ],
     "graphics": [

@@ -6,7 +6,7 @@
  */
 
 export type TwitchCredential = {
-	accessToken?: string;
-	refreshToken?: string;
+	accessToken: string;
+	refreshToken: string;
 	[k: string]: unknown;
 } | null;

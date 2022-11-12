@@ -11,5 +11,6 @@ export interface Configschema {
 		clientId?: string;
 		clientSecret?: string;
 		redirectUrl?: string;
+		loginName?: string;
 	};
 }

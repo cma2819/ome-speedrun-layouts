@@ -20,6 +20,10 @@
                 "redirectUrl": {
                     "type": "string",
                     "default": "http://localhost:9090/ome-speedrun-layouts/auth/twitch/callback"
+                },
+                "loginName": {
+                    "type": "string",
+                    "default": "ome-speedrun"
                 }
             },
             "additionalProperties": false
