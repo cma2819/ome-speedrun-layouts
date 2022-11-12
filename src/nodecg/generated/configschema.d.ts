@@ -7,4 +7,9 @@
 
 export interface Configschema {
 	message: string;
+	twitch?: {
+		clientId?: string;
+		clientSecret?: string;
+		redirectUrl?: string;
+	};
 }
