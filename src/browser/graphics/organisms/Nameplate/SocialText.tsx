@@ -34,7 +34,7 @@ type Props = {
 export const SocialText = ({ twitch, nico, twitter, youtube }: Props) => {
 
   const focusSocial = useContext(FocusSocialContext);
-  const [ focus, setFocus ] = useState<typeof focusSocial>('twitch');
+  const [ focus, setFocus ] = useState<typeof focusSocial>(focusSocial);
   const [ entering, setEntering ] = useState<boolean>(false);
   const [ leaving, setLeaving ] = useState<boolean>(false);
 

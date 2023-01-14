@@ -13,4 +13,5 @@ export interface Configschema {
 		redirectUrl?: string;
 		loginName?: string;
 	};
+	sponsored?: boolean;
 }

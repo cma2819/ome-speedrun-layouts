@@ -6,18 +6,22 @@ import { SpeedcontrolProvider } from './providers/SpeedcontrolProvider';
 import { ScAdditionProvider } from './providers/ScAdditionProvider';
 import { CommentatorProvider } from './providers/CommentatorProvider';
 import { FocusSocialProvider } from './providers/FocusSocialProvider';
+import { ClippedBackground, RectPath } from './components/ClippedBackground';
+import { CameraAlternative } from './components/CameraAlternative';
 
 type Props = {
-  children: ReactNode
+  clipPath?: RectPath[];
+  children: ReactNode;
 };
 
-export const GraphicsApp = ({ children }: Props) => {
+export const GraphicsApp = ({ clipPath, children }: Props) => {
 
   return (
     <SpeedcontrolProvider>
       <ScAdditionProvider>
         <CommentatorProvider>
           <FocusSocialProvider>
+            <ClippedBackground clipPath={clipPath} />
             { children }
           </FocusSocialProvider>
         </CommentatorProvider>

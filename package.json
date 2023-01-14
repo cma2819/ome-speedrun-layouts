@@ -34,11 +34,7 @@
   "nodecg": {
     "compatibleRange": "^1.1.1",
     "bundleDependencies": {
-      "nodecg-speedcontrol": "^2.0.0",
-      "nodecg-twitter-widget": "^0.9.0",
-      "nodecg-spotify-widget": "^0.9.0",
-      "speedcontrol-additions": "^0.9.0",
-      "nodecg-timekeeper": "^0.9.0"
+      "nodecg-speedcontrol": "^2.0.0"
     },
     "dashboardPanels": [
       {
@@ -50,7 +46,7 @@
       {
         "name": "mark-stream",
         "title": "Twitch Stream mark",
-        "width": 6,
+        "width": 3,
         "file": "mark-stream.html"
       }
     ],
@@ -132,6 +128,24 @@
       {
         "name": "logo",
         "title": "Logo",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png"
+        ]
+      },
+      {
+        "name": "background-image",
+        "title": "背景画像",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png"
+        ]
+      },
+      {
+        "name": "sponsor-logo",
+        "title": "スポンサーロゴ",
         "allowedTypes": [
           "jpg",
           "jpeg",

@@ -4,9 +4,15 @@ import styled from 'styled-components';
 import { GraphicsApp } from '../GraphicsApp';
 import { Logo } from '../components/Logo';
 import { RunParticipants } from '../components/RunParticipants';
-import { Timer } from '../components/Timer';
 import { RunDataLabel } from '../components/RunDataLabel';
+import { Timer } from '../components/Timer';
 import { SimpleCard } from '../organisms/SimpleCard';
+import { BundleNodecgInstance } from '../../../nodecg/nodecg';
+import { SponsorLogo } from '../components/SponsorLogo';
+
+const sponsored = (nodecg as BundleNodecgInstance).bundleConfig.sponsored;
+
+const clipPath = { x: 93, y: 196, w: 580, h: 225};
 
 const LogoArea = styled.div`
   position: absolute;
@@ -19,56 +25,61 @@ const LogoArea = styled.div`
 
 const VideoArea = styled.div`
   position: absolute;
-  top: 32px;
-  left: 603px;
-  width: 1285px;
-  height: 964px;
+  top: 24px;
+  left: 749px;
+  width: 1138px;
+  height: 854px;
   background-color: rgba(255, 255, 255, 0.6);
 `;
 
 const Participants = styled.div`
   position: absolute;
-  top: 196px;
-  left: 32px;
-  width: 539px;
-  height: 320px;
+  top: 437px;
+  left: 93px;
+  width: 580px;
+  height: 580px;
+  display: grid;
+  grid-template-rows: 1fr minmax(auto, 1fr);
+  grid-gap: 16px;
 `;
 
 const InfoArea = styled.div`
   position: absolute;
-  top: 536px;
-  left: 32px;
-  width: 539px;
-  height: 460px;
-  padding: 0px;
+  top: 886px;
+  left: 749px;
+  width: 1138px;
+  height: 128px;
+  padding: 8px 0;
 
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: auto auto;
+  column-gap: 8px;
 `;
 
-const Margin = styled.div``;
-
 const InfoRow = styled(SimpleCard)`
-  padding: 8px 16px;
+  padding: 4px 8px;
 `;
 
 const App = () => {
   return (
     <React.Fragment>
-      <GraphicsApp>
+      <GraphicsApp clipPath={[clipPath]}>
         <LogoArea>
           <Logo />
         </LogoArea>
         <VideoArea />
         <Participants>
           <RunParticipants />
+          {
+            sponsored && (
+              <SponsorLogo />
+            )
+          }
         </Participants>
         <InfoArea>
-          <Margin />
           <InfoRow>
             <RunDataLabel />
           </InfoRow>
-          <Margin />
           <InfoRow>
             <Timer />
           </InfoRow>

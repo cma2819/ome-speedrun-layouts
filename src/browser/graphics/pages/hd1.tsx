@@ -7,6 +7,12 @@ import { RunParticipants } from '../components/RunParticipants';
 import { RunDataLabel } from '../components/RunDataLabel';
 import { Timer } from '../components/Timer';
 import { SimpleCard } from '../organisms/SimpleCard';
+import { SponsorLogo } from '../components/SponsorLogo';
+import { BundleNodecgInstance } from '../../../nodecg/nodecg';
+
+const sponsored = (nodecg as BundleNodecgInstance).bundleConfig.sponsored;
+
+const clipPath = { x: 32, y: 196, w: 400, h: 225};
 
 const LogoArea = styled.div`
   position: absolute;
@@ -20,30 +26,32 @@ const LogoArea = styled.div`
 const VideoArea = styled.div`
   position: absolute;
   top: 32px;
-  left: 424px;
-  width: 1464px;
-  height: 824px;
+  left: 458px;
+  width: 1420px;
+  height: 799px;
   background-color: rgba(255, 255, 255, 0.6);
 `;
 
 const Participants = styled.div`
   position: absolute;
-  top: 196px;
+  top: 437px;
   left: 32px;
-  width: 360px;
-  height: 660px;
+  width: 404px;
+  height: 580px;
+  display: grid;
+  grid-template-rows: 1fr minmax(auto, 1fr);
+  grid-gap: 16px;
 `;
 
 const InfoArea = styled.div`
   position: absolute;
   top: 856px;
-  left: 424px;
-  width: 1464px;
+  left: 458px;
+  width: 1420px;
   height: 158px;
   padding: 8px 0;
-
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 2fr minmax(auto, 1fr);
   column-gap: 8px;
 `;
 
@@ -54,13 +62,18 @@ const InfoRow = styled(SimpleCard)`
 const App = () => {
   return (
     <React.Fragment>
-      <GraphicsApp>
+      <GraphicsApp clipPath={[clipPath]}>
         <LogoArea>
           <Logo />
         </LogoArea>
         <VideoArea />
         <Participants>
           <RunParticipants />
+          {
+            sponsored && (
+              <SponsorLogo />
+            )
+          }
         </Participants>
         <InfoArea>
           <InfoRow>

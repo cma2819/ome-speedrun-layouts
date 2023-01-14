@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CommentatorNameplate } from './CommentatorNameplate';
+import { NameAndSocials } from './NameAndSocials';
+import { RunnerNameplate } from './RunnerNameplate';
 import { SocialText } from './SocialText';
 import { TimeText } from './TimeText';
 
@@ -67,29 +70,20 @@ const TimeArea = styled.div`
 
 export const Nameplate = ({ name, socials, role, time }: Props) => {
   return (
-    <Container>
-      <IconCell>
-        { role === 'runner' && (
-          <Icon className="fas fa-gamepad"></Icon>
-        )}
-        { role === 'commentator' && (
-          <Icon className="fas fa-headset"></Icon>
-        )}
-      </IconCell>
-      <NameRow>
-        <NameText>
-          { name }
-        </NameText>
-      </NameRow>
-      <Border />
-      <SocialRow>
-        <TimeArea>
-          <TimeText time={time} />
-        </TimeArea>
-        <SocialArea>
-          <SocialText {... socials} />
-        </SocialArea>
-      </SocialRow>
-    </Container>
+    <>
+      { role === 'runner' && (
+        <RunnerNameplate
+          name={name}
+          socials={socials}
+          time={time}
+        />
+      )}
+      { role === 'commentator' && (
+        <CommentatorNameplate
+          name={name}
+          socials={socials}
+        />
+      )}
+    </>
   );
 }

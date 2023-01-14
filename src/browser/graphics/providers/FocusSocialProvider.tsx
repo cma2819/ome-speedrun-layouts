@@ -3,10 +3,10 @@ import { CommentatorContext } from './CommentatorProvider';
 import { ScAdditionContext } from './ScAdditionProvider';
 import { SpeedcontrolContext } from './SpeedcontrolProvider';
 
-type FocusSocial = 'twitch' | 'nico' | 'twitter' | 'youtube';
-const allSocialNames: Array<FocusSocial> = ['twitch', 'nico', 'twitter', 'youtube'];
+const allSocialNames = ['name', 'twitch', 'nico', 'twitter', 'youtube'] as const;
+type FocusSocial = typeof allSocialNames[number];
 
-const defaultValue = 'twitch';
+const defaultValue = 'name';
 
 const CHANGE_INTERVAL_SEC = 30;
 
@@ -49,11 +49,13 @@ export const FocusSocialProvider = ({ children }: Props) => {
       (commentator) => commentator.social
     );
 
+    const commentatorExists = !!extIdToCommentators[currentRun.externalID]?.length;
     const allSocials = [
       ... runnerSocials,
       ... commentatorSocials,
     ];
     const socialConcat = {
+      name: commentatorExists ? ['Showing name is needed'] : [],
       twitch: allSocials.map(social => social.twitch).filter(d => d),
       nico: allSocials.map(social => social.nico).filter(d => d),
       twitter: allSocials.map(social => social.twitter).filter(d => d),
@@ -71,8 +73,6 @@ export const FocusSocialProvider = ({ children }: Props) => {
   ]);
 
   useEffect(() => {
-    console.log('test');
-
     const intervalId = window.setInterval(() => {
       const length = existSocial.length;
       if (length > 0) {
