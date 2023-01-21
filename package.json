@@ -48,6 +48,12 @@
         "title": "Twitch Stream mark",
         "width": 3,
         "file": "mark-stream.html"
+      },
+      {
+        "name": "connect-livesplit",
+        "title": "Livesplit連携",
+        "width": 3,
+        "file": "connect-livesplit.html"
       }
     ],
     "graphics": [
