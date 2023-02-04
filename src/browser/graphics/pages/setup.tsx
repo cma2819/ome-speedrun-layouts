@@ -6,6 +6,12 @@ import { SetupSchedules } from '../components/SetupSchedules';
 import { SpotifyTrack } from '../components/SpotifyTrack';
 import { Logo } from '../components/Logo';
 import { SimpleCard } from '../organisms/SimpleCard';
+import { BundleNodecgInstance } from '../../../nodecg/nodecg';
+import { SponsorLogo } from '../components/SponsorLogo';
+
+const sponsored = (nodecg as BundleNodecgInstance).bundleConfig.sponsored;
+
+const clipPath = { x: 1024, y: 128, w: 832, h: 468};
 
 const LogoArea = styled.div`
   position: absolute;
@@ -33,11 +39,19 @@ const SpotifyTrackArea = styled(SimpleCard)`
   padding: 8px 16px;
 `;
 
+const SponsorArea = styled('div')`
+  position: absolute;
+  bottom: 64px;
+  right: 64px;
+  height: 348px;
+  width: 554px;
+`
+
 const App = () => {
 
   return (
     <React.Fragment>
-      <GraphicsApp>
+      <GraphicsApp clipPath={[clipPath]}>
         <LogoArea>
           <Logo />
         </LogoArea>
@@ -47,6 +61,13 @@ const App = () => {
         <SpotifyTrackArea>
           <SpotifyTrack />
         </SpotifyTrackArea>
+        {
+          sponsored && (
+            <SponsorArea>
+              <SponsorLogo />
+            </SponsorArea>
+          )
+        }
       </GraphicsApp>
     </React.Fragment>
   );
