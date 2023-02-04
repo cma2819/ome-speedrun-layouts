@@ -7,7 +7,6 @@ import { ScAdditionProvider } from './providers/ScAdditionProvider';
 import { CommentatorProvider } from './providers/CommentatorProvider';
 import { FocusSocialProvider } from './providers/FocusSocialProvider';
 import { ClippedBackground, RectPath } from './components/ClippedBackground';
-import { CameraAlternative } from './components/CameraAlternative';
 
 type Props = {
   clipPath?: RectPath[];
