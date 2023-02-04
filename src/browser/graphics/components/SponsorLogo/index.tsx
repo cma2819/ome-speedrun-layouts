@@ -4,7 +4,7 @@ import { BundleNodecgInstance } from '../../../../nodecg/nodecg';
 
 const Container = styled.div`
   border: 2px solid #bbbbbb;
-  background-color: rgba(0, 0, 0, 0.6) ;
+  background-color: rgba(51, 51, 51, 0.95);
   height: 100%;
   width: 100%;
 `;
