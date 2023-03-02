@@ -31,6 +31,7 @@ export const SponsorLogo = () => {
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '50% 50%',
+        filter: 'drop-shadow(0 0 8px #bbbbbb)',
       }}
       />
     </Container>
