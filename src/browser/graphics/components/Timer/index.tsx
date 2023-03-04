@@ -74,7 +74,7 @@ export const Timer = () => {
       {
         currentRun && (
           <React.Fragment>
-            <MainTime isDanger={overOneHour} useRainbow={false} state={speedcontrol.timer?.state || 'running'}>
+            <MainTime isDanger={false} useRainbow={false} state={speedcontrol.timer?.state || 'running'}>
               {speedcontrol.timer?.time || ''}
             </MainTime>
             <Border />
