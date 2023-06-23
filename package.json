@@ -82,6 +82,18 @@
         "singleInstance": false
       },
       {
+        "file": "sd3.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
+        "file": "sd4.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
         "file": "hd1.html",
         "width": "1920",
         "height": "1028",
@@ -106,12 +118,6 @@
         "singleInstance": false
       },
       {
-        "file": "sd3.html",
-        "width": "1920",
-        "height": "1028",
-        "singleInstance": false
-      },
-      {
         "file": "ds.html",
         "width": "1920",
         "height": "1028",
@@ -119,6 +125,12 @@
       },
       {
         "file": "gba.html",
+        "width": "1920",
+        "height": "1028",
+        "singleInstance": false
+      },
+      {
+        "file": "3ds2.html",
         "width": "1920",
         "height": "1028",
         "singleInstance": false
