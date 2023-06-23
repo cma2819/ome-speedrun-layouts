@@ -10,17 +10,18 @@ import { ClippedBackground, RectPath } from './components/ClippedBackground';
 
 type Props = {
   clipPath?: RectPath[];
+  hiddenOnNoInput?: boolean;
   children: ReactNode;
 };
 
-export const GraphicsApp = ({ clipPath, children }: Props) => {
+export const GraphicsApp = ({ clipPath, hiddenOnNoInput, children }: Props) => {
 
   return (
     <SpeedcontrolProvider>
       <ScAdditionProvider>
         <CommentatorProvider>
           <FocusSocialProvider>
-            <ClippedBackground clipPath={clipPath} />
+            <ClippedBackground clipPath={clipPath} hiddenOnNoInput={hiddenOnNoInput} />
             { children }
           </FocusSocialProvider>
         </CommentatorProvider>

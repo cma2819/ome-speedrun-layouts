@@ -12,12 +12,13 @@ export type RectPath = {
 
 type Props = {
   clipPath?: RectPath[];
+  hiddenOnNoInput?: boolean;
 }
 
 const params = new URLSearchParams(document.location.search);
 const useCamera = params.has('useCamera');
 
-export const ClippedBackground = ({ clipPath }: Props) => {
+export const ClippedBackground = ({ clipPath, hiddenOnNoInput }: Props) => {
   
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -62,7 +63,11 @@ export const ClippedBackground = ({ clipPath }: Props) => {
             width: `${path.w}px`,
             height: `${path.h}px`,
           }}>
-            <CameraAlternative />
+            {
+              !hiddenOnNoInput && (
+                <CameraAlternative />
+              )
+            }
           </div>
         ))
       )}

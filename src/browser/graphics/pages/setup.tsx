@@ -51,7 +51,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <GraphicsApp clipPath={[clipPath]}>
+      <GraphicsApp clipPath={[clipPath]} hiddenOnNoInput>
         <LogoArea>
           <Logo />
         </LogoArea>
