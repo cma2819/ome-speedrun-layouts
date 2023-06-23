@@ -5,7 +5,6 @@ import { ScAdditionContext } from '../../providers/ScAdditionProvider';
 import { SpeedcontrolContext } from '../../providers/SpeedcontrolProvider';
 import { NextSchedule } from './NextSchedule';
 import './fade.css';
-import { TweetContext } from '../../providers/TweetProvider';
 import { TwitterNotification } from './TwitterNotification';
 import { ReplicantContext } from '../../../ReplicantProvider';
 import { ModMessage } from './ModMessage';
@@ -34,7 +33,6 @@ export const BarContent = () => {
 
   const speedcontrol = useContext(SpeedcontrolContext);
   const scAdditions = useContext(ScAdditionContext);
-  const twitter = useContext(TweetContext);
   const message = useContext(ReplicantContext).message;
 
   const nextRun = speedcontrol.runDataArray.find((_, index) => index === scAdditions.speedcontrolCurrentRunIndex + 1);
@@ -85,52 +83,39 @@ export const BarContent = () => {
 
       <SwitchTransition mode="out-in">
         <CSSTransition
-          key={twitter.isActive ? 'active' : 'none'}
+          key='none'
           addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
           classNames="fade"
         >
-          <React.Fragment>
-            {
-              twitter.isActive && (
-                <TwitterArea>
-                  <TwitterNotification tweet={twitter.activeTweet} />
-                </TwitterArea>
-              )
-            }
-            {
-              !twitter.isActive && (
-                <div>
-                  <SwitchTransition mode="out-in">
-                    <CSSTransition
-                      key={scene}
-                      addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
-                      classNames="fade"
-                    >
-                      <React.Fragment>
-                        {
-                          (scene === 'hashtag') && (
-                            <MessageArea>{staticMessage}</MessageArea>
-                          )
-                        }
-                        {
-                          (scene === 'message') && (
-                            <ModMessageArea>
-                              <ModMessage message={message} />
-                            </ModMessageArea>
-                          )
-                        }
-                        {
-                          (scene === 'next' && nextRun) && (
-                            <NextSchedule nextRun={nextRun} />
-                          )
-                        }
-                      </React.Fragment>
-                    </CSSTransition>
-                  </SwitchTransition>
-                </div>
-              )
-            }
-          </React.Fragment>
+          <div>
+            <SwitchTransition mode="out-in">
+              <CSSTransition
+                key={scene}
+                addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
+                classNames="fade"
+              >
+                <React.Fragment>
+                  {
+                    (scene === 'hashtag') && (
+                      <MessageArea>{staticMessage}</MessageArea>
+                    )
+                  }
+                  {
+                    (scene === 'message') && (
+                      <ModMessageArea>
+                        <ModMessage message={message} />
+                      </ModMessageArea>
+                    )
+                  }
+                  {
+                    (scene === 'next' && nextRun) && (
+                      <NextSchedule nextRun={nextRun} />
+                    )
+                  }
+                </React.Fragment>
+              </CSSTransition>
+            </SwitchTransition>
+          </div>
         </CSSTransition>
       </SwitchTransition>
 
