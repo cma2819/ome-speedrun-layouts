@@ -32,7 +32,7 @@
     "test": "jest"
   },
   "nodecg": {
-    "compatibleRange": "^1.1.1",
+    "compatibleRange": ">=1.1.1",
     "bundleDependencies": {
       "nodecg-speedcontrol": "^2.0.0"
     },
